@@ -1,9 +1,13 @@
-import {Numero, PortaDiv} from "../styles/Porta";
+import {Area, Portal, Numero, PortaDiv} from "../styles/Porta";
 
 export default function Porta(props) {
     return (
-        <PortaDiv>
-            <Numero>3</Numero>
-        </PortaDiv>
+        <Area>
+            <Portal>
+                <PortaDiv>
+                    <Numero>3</Numero>
+                </PortaDiv>
+            </Portal>
+        </Area>
     );
 }
