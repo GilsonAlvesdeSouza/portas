@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <div>
-            <Porta porta={porta}/>
+            <Porta value={porta}/>
         </div>
     )
 }

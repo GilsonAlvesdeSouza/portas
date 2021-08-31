@@ -2,12 +2,12 @@ import {Area, Portal, Numero, PortaDiv, Soleira, Macaneta} from "../styles/Porta
 import PortaModel from "../model/PortaModel";
 
 interface PortaProps {
-    porta: PortaModel,
+    value: PortaModel,
 }
 
 export default function Porta(props: PortaProps) {
 
-    const {numero, possuiPresente, selecionada, aberta} = props.porta;
+    const {numero, possuiPresente, selecionada, aberta} = props.value;
 
     return (
         <Area>
