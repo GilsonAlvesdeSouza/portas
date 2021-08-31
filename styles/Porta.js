@@ -4,8 +4,8 @@ export const PortaDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  height: 310px;
+  width: var(--area-porta-largura);
+  height: var(--area-porta-altura);
   background-color: chocolate;
   padding: 15px;
 `;
