@@ -27,17 +27,17 @@ export default class PortaModel {
         return this.#aberta;
     }
 
-    desSelecionar(): object {
+    desSelecionar(): PortaModel {
         const selecionada = false;
         return new PortaModel(this.numero, this.possuiPresente, selecionada, this.aberta);
     }
 
-    alternarSelecao(): object {
+    alternarSelecao(): PortaModel {
         const selecionada = !this.selecionada;
         return new PortaModel(this.numero, this.possuiPresente, selecionada, this.aberta);
     }
 
-    abrir(): object {
+    abrir(): PortaModel {
         const aberta = true;
         return new PortaModel(this.numero, this.possuiPresente, this.selecionada, aberta);
     }

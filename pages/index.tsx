@@ -1,4 +1,3 @@
-import Presente from "../components/Presente";
 import Porta from "../components/Porta";
 import PortaModel from "../model/PortaModel";
 import {useState} from "react";
@@ -9,7 +8,7 @@ export default function Home() {
 
     return (
         <div>
-            <Porta value={porta}/>
+            <Porta value={porta} onChange={novaPorta => setPorta(novaPorta)}/>
         </div>
     )
 }
