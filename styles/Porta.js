@@ -13,9 +13,9 @@ export const Area = styled.div`
 export const Portal = styled.div`
   display: flex;
   flex-grow: 1;
-  border-left: 5px solid brown;
-  border-top: 5px solid brown;
-  border-right: 5px solid brown;
+  border-left: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
+  border-top: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
+  border-right: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
   width: 90%;
 `;
 
@@ -35,16 +35,16 @@ export const Macaneta = styled.div`
   height: 11px;
   width: 40px;
   border-radius: 10px;
-  background-color: brown;
+  background-color: ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
 `;
 
 export const Numero = styled.div`
   font-size: 3rem;
+  color: ${({selecionada}) => (selecionada) === true ? 'yellow' : 'with'};
 `;
 
 export const Soleira = styled.div`
   width: 100%;
   height: 10px;
   background-color: #ddd;
-
 `;
