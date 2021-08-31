@@ -1,14 +1,19 @@
 import {Area, Portal, Numero, PortaDiv, Soleira, Macaneta} from "../styles/Porta";
+import PortaModel from "../model/PortaModel";
 
-export default function Porta(props) {
+interface PortaProps {
+    porta: PortaModel,
+}
 
-    const {selecionada} = props;
+export default function Porta(props: PortaProps) {
+
+    const {numero, possuiPresente, selecionada, aberta} = props.porta;
 
     return (
         <Area>
             <Portal selecionada={selecionada}>
                 <PortaDiv>
-                    <Numero selecionada={selecionada}>3</Numero>
+                    <Numero selecionada={selecionada}>{numero}</Numero>
                     <Macaneta selecionada={selecionada}/>
                 </PortaDiv>
             </Portal>
