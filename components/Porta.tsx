@@ -8,18 +8,30 @@ interface PortaProps {
 
 export default function Porta(props: PortaProps) {
 
+    const {onChange} = props;
     const porta = props.value;
     const {numero, possuiPresente, selecionada, aberta} = porta;
 
-    const alternarSelecao = (event) => props.onChange(porta.alternarSelecao());
+    const alternarSelecao = (event) => onChange(porta.alternarSelecao());
+
+    const abrir = (event) => {
+        event.stopPropagation();
+        onChange(porta.abrir());
+    }
+
+    function renderizarPorta() {
+        return (
+            <PortaDiv>
+                <Numero selecionada={selecionada}>{numero}</Numero>
+                <Macaneta selecionada={selecionada} onClick={abrir}/>
+            </PortaDiv>
+        );
+    }
 
     return (
         <Area onClick={alternarSelecao}>
-            <Portal selecionada={selecionada}>
-                <PortaDiv>
-                    <Numero selecionada={selecionada}>{numero}</Numero>
-                    <Macaneta selecionada={selecionada}/>
-                </PortaDiv>
+            <Portal selecionada={!aberta ? selecionada : false}>
+                {porta.aberta ? false : renderizarPorta()}
             </Portal>
             <Soleira/>
         </Area>

@@ -16,6 +16,7 @@ export const Portal = styled.div`
   border-left: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
   border-top: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
   border-right: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
+  background-color: #0005;
   width: 90%;
 `;
 
