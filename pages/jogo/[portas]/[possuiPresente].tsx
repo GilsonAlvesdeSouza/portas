@@ -17,8 +17,8 @@ export default function PossuiPresente() {
         const quantidadePortasValida = (quantidadePortas >= 3 && quantidadePortas <= 100);
         const possuiPresenteValido = (portaPremiada >= 1 && portaPremiada <= quantidadePortas);
 
-        setValido(quantidadePortas && possuiPresenteValido);
-    }, [portas]);
+        setValido(quantidadePortasValida && possuiPresenteValido);
+    }, [portas, router.query.portas, router.query.possuiPresente]);
 
     useEffect(() => {
         const quantidadePortas = +router.query.portas;
@@ -43,7 +43,7 @@ export default function PossuiPresente() {
                 {renderizarPortas()}
             </Portas>
             <Botoes>
-                <Link href="/">
+                <Link href="/" passHref>
                     <Btn>Voltar</Btn>
                 </Link>
             </Botoes>

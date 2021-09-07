@@ -38,7 +38,7 @@ export default function Formulario() {
                                      onChange={(numeroPortaPremiada) => alteraPortaPremiada(numeroPortaPremiada)}/>
                 </Cartao>
                 <Cartao backgroundColor='#28a085'>
-                    <Link href={`/jogo/${quantidadePortas}/${portaPremiada}`}>
+                    <Link href={`/jogo/${quantidadePortas}/${portaPremiada}`} passHref>
                         <Button>Iniciar</Button>
                     </Link>
                 </Cartao>
