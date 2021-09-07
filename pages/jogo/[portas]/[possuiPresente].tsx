@@ -9,6 +9,16 @@ export default function PossuiPresente() {
 
     const router = useRouter();
     const [portas, setPortas] = useState([]);
+    const [valido, setValido] = useState(false);
+
+    useEffect(() => {
+        const quantidadePortas = +router.query.portas;
+        const portaPremiada = +router.query.possuiPresente;
+        const quantidadePortasValida = (quantidadePortas >= 3 && quantidadePortas <= 100);
+        const possuiPresenteValido = (portaPremiada >= 1 && portaPremiada <= quantidadePortas);
+
+        setValido(quantidadePortas && possuiPresenteValido);
+    }, [portas]);
 
     useEffect(() => {
         const quantidadePortas = +router.query.portas;
@@ -17,6 +27,9 @@ export default function PossuiPresente() {
     }, [router]);
 
     const renderizarPortas = () => {
+        if (!valido) {
+            return <h2>Os valores informados não são validos!</h2>
+        }
         return portas.map((porta) => {
             return <Porta key={porta.numero} value={porta} onChange={novaPorta => {
                 setPortas(atualizarPortas(portas, novaPorta));

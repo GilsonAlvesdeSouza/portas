@@ -9,6 +9,18 @@ export default function Formulario() {
     const [quantidadePortas, setQuantidadePortas] = useState(3);
     const [portaPremiada, setPortaPremiada] = useState(2);
 
+    const alteraQuantidadePortas = (quantidade: number) => {
+        if (quantidade >= 3 && quantidade <= 10) {
+            setQuantidadePortas(quantidade);
+        }
+    }
+
+    const alteraPortaPremiada = (numeroPortaPremiada: number) => {
+        if (numeroPortaPremiada >= 1 && numeroPortaPremiada <= quantidadePortas) {
+            setPortaPremiada(numeroPortaPremiada);
+        }
+    }
+
     return (
         <Container>
             <CartaoBloco>
@@ -17,13 +29,13 @@ export default function Formulario() {
                 </Cartao>
                 <Cartao>
                     <EntradaNumerica text="Quantidade de portas:" value={quantidadePortas}
-                                     onChange={(novaQuantidade) => setQuantidadePortas(novaQuantidade)}/>
+                                     onChange={(novaQuantidade) => alteraQuantidadePortas(novaQuantidade)}/>
                 </Cartao>
             </CartaoBloco>
             <CartaoBloco>
                 <Cartao>
                     <EntradaNumerica text="Porta premiada:" value={portaPremiada}
-                                     onChange={(numeroPortaPremiada) => setPortaPremiada(numeroPortaPremiada)}/>
+                                     onChange={(numeroPortaPremiada) => alteraPortaPremiada(numeroPortaPremiada)}/>
                 </Cartao>
                 <Cartao backgroundColor='#28a085'>
                     <Link href={`/jogo/${quantidadePortas}/${portaPremiada}`}>

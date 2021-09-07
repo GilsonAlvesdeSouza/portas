@@ -18,7 +18,7 @@ export const Value = styled.span`
   font-size: 6rem;
 `;
 
-export const Buttoes = styled.div`
+export const Botoes = styled.div`
   display: flex;
 `;
 
