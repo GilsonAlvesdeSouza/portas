@@ -7,3 +7,13 @@ export function criarPortas(quantidade: number, selecionada: number): PortaModel
         return new PortaModel(numero, temPresent);
     });
 }
+
+export function atualizarPortas(portas: PortaModel[], portaModificada: PortaModel): PortaModel[] {
+    return portas.map((portaAtual) => {
+        const modificada = (portaAtual.numero === portaModificada.numero);
+        if (modificada) {
+            return portaModificada;
+        }
+        return portaModificada.aberta ? portaAtual : portaAtual.desSelecionar();
+    });
+}
