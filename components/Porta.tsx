@@ -1,5 +1,6 @@
 import {Area, Portal, Numero, PortaDiv, Soleira, Macaneta} from "../styles/Porta";
 import PortaModel from "../model/PortaModel";
+import Presente from "./Presente"
 
 interface PortaProps {
     value: PortaModel,
@@ -31,8 +32,10 @@ export default function Porta(props: PortaProps) {
     return (
         <Area onClick={alternarSelecao}>
             <Portal selecionada={!aberta ? selecionada : false}>
-                {porta.aberta ? false : renderizarPorta()}
+                {porta.fechada ?
+                    renderizarPorta() : porta.possuiPresente ? <Presente/> : false}
             </Portal>
+
             <Soleira/>
         </Area>
     );

@@ -12,6 +12,7 @@ export const Area = styled.div`
 
 export const Portal = styled.div`
   display: flex;
+  flex-direction: column-reverse;
   flex-grow: 1;
   border-left: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
   border-top: 5px solid ${({selecionada}) => (selecionada) === true ? 'yellow' : 'brown'};
