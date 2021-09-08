@@ -21,7 +21,7 @@ export const Botoes = styled.div`
   margin-top: 40px;
 `;
 
-export const Btn = styled.button`
+export const Botao = styled.button`
   background-color: #c0392c;
   color: white;
   font-size: 2rem;

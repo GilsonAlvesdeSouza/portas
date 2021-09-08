@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {atualizarPortas, criarPortas} from "../../../functions/portas";
 import Porta from "../../../components/Porta";
-import {Botoes, Container, Portas, Btn} from "../../../styles/Jogo"
+import {Botoes, Container, Portas, Botao} from "../../../styles/Jogo"
 import Link from "next/link";
 import {useRouter} from "next/router";
 
@@ -44,7 +44,7 @@ export default function PossuiPresente() {
             </Portas>
             <Botoes>
                 <Link href="/" passHref>
-                    <Btn>Voltar</Btn>
+                    <Botao>Voltar</Botao>
                 </Link>
             </Botoes>
         </Container>
